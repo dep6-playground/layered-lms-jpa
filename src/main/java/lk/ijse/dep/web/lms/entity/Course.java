@@ -4,14 +4,13 @@ package lk.ijse.dep.web.lms.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @ToString(exclude = "course2Student")
 @Entity
 @Table(name = "course")
 @AllArgsConstructor @NoArgsConstructor @Data
-public class Course implements Serializable {
+public class Course implements SuperEntity {
     @Id
     private String code;
 

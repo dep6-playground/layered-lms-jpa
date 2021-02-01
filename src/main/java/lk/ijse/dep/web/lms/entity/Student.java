@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
-@ToString(exclude = "student2Courses")
+@ToString(exclude = "student2Course")
 @Data @AllArgsConstructor @NoArgsConstructor
 @Entity @Table(name = "student")
 public class Student implements Serializable {
@@ -30,7 +30,7 @@ public class Student implements Serializable {
 
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "student")
-    private List<StudentCourse> student2Courses;
+    private List<StudentCourse> student2Course;
 
     public Student(String id, String studentName, Address address, String contact, Date dob, Gender gender) {
         this.id = id;

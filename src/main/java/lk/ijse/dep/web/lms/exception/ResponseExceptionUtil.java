@@ -3,6 +3,7 @@ package lk.ijse.dep.web.lms.exception;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import lk.ijse.dep.web.lms.dto.ErrorDTO;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.servlet.http.HttpServletResponse;

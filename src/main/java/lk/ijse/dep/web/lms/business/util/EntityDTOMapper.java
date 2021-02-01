@@ -1,4 +1,4 @@
-package lk.ijse.dep.web.lms.util;
+package lk.ijse.dep.web.lms.business.util;
 
 import lk.ijse.dep.web.lms.dto.CourseDTO;
 import lk.ijse.dep.web.lms.dto.StudentDTO;
@@ -7,6 +7,8 @@ import lk.ijse.dep.web.lms.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+
+import java.util.List;
 
 @Mapper
 public interface EntityDTOMapper {
@@ -18,8 +20,14 @@ public interface EntityDTOMapper {
 
     StudentDTO getStudentDTO(Student student);
 
+    List<StudentDTO> getStudentDTOs(List<Student> students);
+
+
     @Mapping(target = "course2Student",ignore = true)
     Course getCourse(CourseDTO dto);
 
     CourseDTO getCourseDTO(Course course);
+
+    List<CourseDTO> getCourseDTOs(List<Course> customers);
+
 }

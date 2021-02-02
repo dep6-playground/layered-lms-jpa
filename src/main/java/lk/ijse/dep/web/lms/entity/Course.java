@@ -23,7 +23,7 @@ public class Course implements SuperEntity {
 
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "course")
-    private List<StudentCourse> course2Student;
+    private List<Register> course2Student;
 
     public Course(String code, String description, String duration, Audience audience) {
         this.code = code;

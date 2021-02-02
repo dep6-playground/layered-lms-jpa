@@ -1,6 +1,7 @@
 package lk.ijse.dep.web.lms.business;
 
 import lk.ijse.dep.web.lms.business.custom.impl.CourseBOImpl;
+import lk.ijse.dep.web.lms.business.custom.impl.RegisterBOImpl;
 import lk.ijse.dep.web.lms.business.custom.impl.StudentBOImpl;
 
 public class BOFactory {
@@ -21,6 +22,8 @@ public class BOFactory {
                 return (T) new StudentBOImpl();
             case COURSE:
                 return (T) new CourseBOImpl();
+            case REGISTER:
+                return (T) new RegisterBOImpl();
             default:
                 return null;
         }

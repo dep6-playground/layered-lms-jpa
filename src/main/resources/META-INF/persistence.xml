@@ -9,6 +9,7 @@
 
     <class>lk.ijse.dep.web.lms.entity.Student</class>
     <class>lk.ijse.dep.web.lms.entity.Course</class>
+    <class>lk.ijse.dep.web.lms.entity.Register</class>
 
   </persistence-unit>
 </persistence>

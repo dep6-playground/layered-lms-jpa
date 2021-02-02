@@ -4,22 +4,23 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Table(name = "student_course")
 @Entity
-public class StudentCourse implements Serializable {
+public class Register implements SuperEntity {
 
     @EmbeddedId
-    private StudentCoursePK studentCoursePK;
+    private RegisterPK registerPK;
 
     @Column(name = "registered_date",nullable = false)
     @Temporal(TemporalType.DATE)
     private Date registeredDate;
 
     @Column(name = "register_fee")
-    private double registerFee;
+    private BigDecimal registerFee;
 
     @ManyToOne
     @Setter(AccessLevel.NONE)
@@ -32,14 +33,14 @@ public class StudentCourse implements Serializable {
     private Course course;
 
 
-    public StudentCourse(String studentId, String courseCode, Date registeredDate, double registerFee) {
-        this.studentCoursePK = new StudentCoursePK(studentId,courseCode);
+    public Register(String studentId, String courseCode, Date registeredDate, BigDecimal registerFee) {
+        this.registerPK = new RegisterPK(studentId,courseCode);
         this.registeredDate = registeredDate;
         this.registerFee = registerFee;
     }
 
-    public StudentCourse(StudentCoursePK studentCoursePK, Date registeredDate, double registerFee) {
-        this.studentCoursePK = studentCoursePK;
+    public Register(RegisterPK registerPK, Date registeredDate, BigDecimal registerFee) {
+        this.registerPK = registerPK;
         this.registeredDate = registeredDate;
         this.registerFee = registerFee;
     }

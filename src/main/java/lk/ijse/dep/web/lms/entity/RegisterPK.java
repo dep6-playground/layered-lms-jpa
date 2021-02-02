@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 @Data @AllArgsConstructor @NoArgsConstructor
 @Embeddable
-public class StudentCoursePK  implements Serializable {
+public class RegisterPK implements Serializable {
 
     @Column(name = "student_id")
     private String studentId;

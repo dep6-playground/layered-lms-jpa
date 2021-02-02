@@ -11,7 +11,7 @@ import java.util.List;
 @Entity @Table(name = "student")
 public class Student implements SuperEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     private String studentName;
@@ -29,7 +29,7 @@ public class Student implements SuperEntity {
 
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "student")
-    private List<StudentCourse> student2Course;
+    private List<Register> student2Course;
 
     public Student(String id, String studentName, Address address, String contact, Date dob, Gender gender) {
         this.id = id;
